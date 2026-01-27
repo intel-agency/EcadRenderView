@@ -1,0 +1,317 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Beta_Test_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T15:30:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        70000,
+        0
+      ],
+      [
+        70000,
+        50000
+      ],
+      [
+        0,
+        50000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIEL",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 1600.0,
+          "dielectricConstant": 4.5
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35
+        }
+      }
+    ],
+    "totalThickness": 1670.0,
+    "surfaceFinish": "HASL"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC",
+      "class": "POWER"
+    },
+    {
+      "name": "DATA",
+      "class": "SIGNAL"
+    },
+    {
+      "name": "CLK",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "U1": {
+      "name": "U1",
+      "reference": "U1",
+      "footprint": "TSSOP14",
+      "display_name": "14-Pin TSSOP",
+      "outline": {
+        "type": "rectangle",
+        "width": 1500,
+        "height": 800,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          35000,
+          25000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "U1",
+          "net_name": "DATA",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            -500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "7": {
+          "name": "7",
+          "comp_name": "U1",
+          "net_name": "GND",
+          "shape": {
+            "type": "circle",
+            "center": [
+              0,
+              0
+            ],
+            "radius": 150
+          },
+          "position": [
+            -2350,
+            -1800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "8": {
+          "name": "8",
+          "comp_name": "U1",
+          "net_name": "CLK",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 300
+          },
+          "position": [
+            2350,
+            -1800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "14": {
+          "name": "14",
+          "comp_name": "U1",
+          "net_name": "VCC",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 300
+          },
+          "position": [
+            2350,
+            1800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_data": {
+      "uid": "trace_data",
+      "net_name": "DATA",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            32650,
+            26800
+          ],
+          [
+            25000,
+            26800
+          ],
+          [
+            25000,
+            40000
+          ]
+        ]
+      },
+      "width": 150
+    },
+    "trace_clk": {
+      "uid": "trace_clk",
+      "net_name": "CLK",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37350,
+            23200
+          ],
+          [
+            45000,
+            23200
+          ],
+          [
+            45000,
+            40000
+          ]
+        ]
+      },
+      "width": 150
+    }
+  },
+  "vias": {
+    "via_gnd": {
+      "uid": "via_gnd",
+      "net_name": "GND",
+      "center": [
+        32800,
+        20000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "DATA",
+      "center": [
+        32650,
+        26800
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_002": {
+      "uid": "via_auto_002",
+      "net_name": "DATA",
+      "center": [
+        25000,
+        40000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_003": {
+      "uid": "via_auto_003",
+      "net_name": "CLK",
+      "center": [
+        45000,
+        40000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 150
+    },
+    "default_via_rule": {
+      "diameter": 500,
+      "hole_size": 250
+    },
+    "clearance_rules": {
+      "default_clearance": 150
+    }
+  },
+  "ground_net_name": "GND"
+}

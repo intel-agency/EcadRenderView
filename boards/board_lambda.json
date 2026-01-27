@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Lambda_Test_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T20:00:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        92000,
+        0
+      ],
+      [
+        92000,
+        68000
+      ],
+      [
+        0,
+        68000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIEL",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 1600.0
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      }
+    ],
+    "totalThickness": 1670.0
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC",
+      "class": "POWER"
+    },
+    {
+      "name": "OUT",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "LED1": {
+      "name": "LED1",
+      "reference": "LED1",
+      "footprint": "LED_0805",
+      "outline": {
+        "type": "rectangle",
+        "width": 2000,
+        "height": 1250,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          46000,
+          34000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "A": {
+          "name": "A",
+          "comp_name": "LED1",
+          "net_name": "VCC",
+          "shape": {
+            "type": "rectangle",
+            "width": 450,
+            "height": 900
+          },
+          "position": [
+            -700,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K": {
+          "name": "K",
+          "comp_name": "LED1",
+          "net_name": "OUT",
+          "shape": {
+            "type": "rectangle",
+            "width": 450,
+            "height": 900
+          },
+          "position": [
+            700,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_out": {
+      "uid": "trace_out",
+      "net_name": "OUT",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            46700,
+            34000
+          ],
+          [
+            60000,
+            34000
+          ],
+          [
+            60000,
+            50000
+          ],
+          [
+            75000,
+            50000
+          ]
+        ]
+      },
+      "width": 150
+    }
+  },
+  "vias": {
+    "via_gnd": {
+      "uid": "via_gnd",
+      "net_name": "GND",
+      "center": [
+        30000,
+        34000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "OUT",
+      "center": [
+        75000,
+        50000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_bad_hole": {
+      "uid": "via_bad_hole",
+      "net_name": "GND",
+      "center": [
+        25000,
+        25000
+      ],
+      "diameter": 400,
+      "hole_size": 500,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 150
+    },
+    "default_via_rule": {
+      "diameter": 500,
+      "hole_size": 250
+    },
+    "clearance_rules": {
+      "default_clearance": 150
+    }
+  },
+  "ground_net_name": "GND"
+}

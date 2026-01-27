@@ -1,0 +1,1524 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Example_PCB_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-08T00:00:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        100000,
+        0
+      ],
+      [
+        100000,
+        80000
+      ],
+      [
+        0,
+        80000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0,
+          "copperWeight": "1oz"
+        }
+      },
+      {
+        "name": "DIELECTRIC_1",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 200.0,
+          "dielectricConstant": 4.5,
+          "lossTangent": 0.02
+        }
+      },
+      {
+        "name": "GND_PLANE",
+        "layer_type": "PLANE",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIELECTRIC_2",
+        "layer_type": "DIELECTRIC",
+        "index": 3,
+        "material": {
+          "type": "FR4",
+          "thickness": 1000.0,
+          "dielectricConstant": 4.5
+        }
+      },
+      {
+        "name": "POWER_PLANE",
+        "layer_type": "PLANE",
+        "index": 4,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIELECTRIC_3",
+        "layer_type": "DIELECTRIC",
+        "index": 5,
+        "material": {
+          "type": "FR4",
+          "thickness": 200.0,
+          "dielectricConstant": 4.5
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 6,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0,
+          "copperWeight": "1oz"
+        }
+      }
+    ],
+    "totalThickness": 1540.0,
+    "surfaceFinish": "ENIG"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC_3V3",
+      "class": "POWER"
+    },
+    {
+      "name": "SDA",
+      "class": "SIGNAL"
+    },
+    {
+      "name": "SCL",
+      "class": "SIGNAL"
+    },
+    {
+      "name": "GPIO_0",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "R1": {
+      "name": "R1",
+      "reference": "R1",
+      "footprint": "RES_0603",
+      "display_name": "0603 Resistor",
+      "outline": {
+        "type": "rectangle",
+        "width": 1600,
+        "height": 800,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          25000,
+          40000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "R1",
+          "net_name": "VCC_3V3",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 600
+          },
+          "position": [
+            -550,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "R1",
+          "net_name": "SDA",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 600
+          },
+          "position": [
+            550,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": false
+    },
+    "C1": {
+      "name": "C1",
+      "reference": "C1",
+      "footprint": "CAP_0402",
+      "display_name": "0402 Capacitor",
+      "outline": {
+        "type": "rectangle",
+        "width": 1000,
+        "height": 500,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          30000,
+          35000
+        ],
+        "rotation": 90,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "C1",
+          "net_name": "VCC_3V3",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 400
+          },
+          "position": [
+            -350,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "C1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 400
+          },
+          "position": [
+            350,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    },
+    "U1": {
+      "name": "U1",
+      "reference": "U1",
+      "footprint": "QFP48",
+      "display_name": "48-pin QFP Package",
+      "outline": {
+        "type": "rectangle",
+        "width": 9000,
+        "height": 9000,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          50000,
+          40000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "U1",
+          "net_name": "SDA",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            -2750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "U1",
+          "net_name": "SCL",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            -2250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "3": {
+          "name": "3",
+          "comp_name": "U1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            -1750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "4": {
+          "name": "4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            -1250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "5": {
+          "name": "5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            -750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "6": {
+          "name": "6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            -250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "7": {
+          "name": "7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "8": {
+          "name": "8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "9": {
+          "name": "9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            1250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "10": {
+          "name": "10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            1750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "11": {
+          "name": "11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            2250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "12": {
+          "name": "12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            -4800,
+            2750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "13": {
+          "name": "13",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -2750.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "14": {
+          "name": "14",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -2250.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "15": {
+          "name": "15",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -1750.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "16": {
+          "name": "16",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -1250.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "17": {
+          "name": "17",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -750.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "18": {
+          "name": "18",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -250.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "19": {
+          "name": "19",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            250.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "20": {
+          "name": "20",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            750.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "21": {
+          "name": "21",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            1250.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "22": {
+          "name": "22",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            1750.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "23": {
+          "name": "23",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            2250.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "24": {
+          "name": "24",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            2750.0,
+            -4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "25": {
+          "name": "25",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            -2750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "26": {
+          "name": "26",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            -2250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "27": {
+          "name": "27",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            -1750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "28": {
+          "name": "28",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            -1250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "29": {
+          "name": "29",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            -750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "30": {
+          "name": "30",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            -250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "31": {
+          "name": "31",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "32": {
+          "name": "32",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "33": {
+          "name": "33",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            1250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "34": {
+          "name": "34",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            1750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "35": {
+          "name": "35",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            2250.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "36": {
+          "name": "36",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 600,
+            "height": 250
+          },
+          "position": [
+            4800,
+            2750.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "37": {
+          "name": "37",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            2750.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "38": {
+          "name": "38",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            2250.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "39": {
+          "name": "39",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            1750.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "40": {
+          "name": "40",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            1250.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "41": {
+          "name": "41",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            750.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "42": {
+          "name": "42",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            250.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "43": {
+          "name": "43",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -250.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "44": {
+          "name": "44",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -750.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "45": {
+          "name": "45",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -1250.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "46": {
+          "name": "46",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -1750.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "47": {
+          "name": "47",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -2250.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "48": {
+          "name": "48",
+          "comp_name": "U1",
+          "net_name": "VCC_3V3",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 600
+          },
+          "position": [
+            -2750.0,
+            4800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "keepouts": {
+        "body_keepout": {
+          "name": "body_keepout",
+          "shape": {
+            "type": "rectangle",
+            "width": 8000,
+            "height": 8000,
+            "center": [
+              0,
+              0
+            ]
+          },
+          "layer": "ALL",
+          "keepout_type": "COMPONENT"
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_001": {
+      "uid": "trace_001",
+      "net_name": "SDA",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            45200,
+            37250.0
+          ],
+          [
+            40000,
+            32000
+          ]
+        ]
+      },
+      "width": 150
+    },
+    "trace_002": {
+      "uid": "trace_002",
+      "net_name": "VCC_3V3",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            47250.0,
+            44800
+          ],
+          [
+            47250.0,
+            50000
+          ]
+        ]
+      },
+      "width": 200
+    }
+  },
+  "vias": {
+    "via_001": {
+      "uid": "via_001",
+      "net_name": "GND",
+      "center": [
+        30000,
+        30000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_002": {
+      "uid": "via_002",
+      "net_name": "VCC_3V3",
+      "center": [
+        55000,
+        55000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_002": {
+      "uid": "via_auto_002",
+      "net_name": "SDA",
+      "center": [
+        40000,
+        32000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_003": {
+      "uid": "via_auto_003",
+      "net_name": "VCC_3V3",
+      "center": [
+        47250,
+        50000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {
+    "pour_gnd": {
+      "uid": "pour_gnd",
+      "name": "GND_POUR",
+      "net_name": "GND",
+      "layer_hash": "GND_PLANE",
+      "boundary": {
+        "type": "polygon",
+        "coordinates": [
+          [
+            5000,
+            5000
+          ],
+          [
+            95000,
+            5000
+          ],
+          [
+            95000,
+            75000
+          ],
+          [
+            5000,
+            75000
+          ],
+          [
+            5000,
+            5000
+          ]
+        ]
+      },
+      "clearance": 200,
+      "cross_cutout": true
+    }
+  },
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 150
+    },
+    "default_via_rule": {
+      "diameter": 500,
+      "hole_size": 250
+    },
+    "clearance_rules": {
+      "default_clearance": 150,
+      "type_clearances": {
+        "Trace_Trace": 150,
+        "Trace_Via": 150,
+        "Trace_Pin": 100,
+        "Via_Via": 200,
+        "Via_Pin": 150
+      }
+    },
+    "net_specific_rules": {
+      "VCC_3V3": {
+        "trace_width": 200,
+        "clearance": 200
+      },
+      "GND": {
+        "trace_width": 200,
+        "clearance": 200
+      }
+    },
+    "impedance_controls": [
+      {
+        "net_name": "SDA",
+        "target_impedance": 50,
+        "tolerance_percent": 10
+      }
+    ]
+  },
+  "drill_data": {
+    "drill_spans": [
+      {
+        "name": "THRU",
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM",
+        "plated": true
+      },
+      {
+        "name": "BLIND_TOP",
+        "start_layer": "TOP",
+        "end_layer": "GND_PLANE",
+        "plated": true
+      }
+    ],
+    "tools": [
+      {
+        "size": 250,
+        "type": "DRILL",
+        "plated": true
+      },
+      {
+        "size": 300,
+        "type": "DRILL",
+        "plated": true
+      },
+      {
+        "size": 800,
+        "type": "DRILL",
+        "plated": false
+      }
+    ]
+  },
+  "ground_net_name": "GND",
+  "custom_plane_net_names": [
+    "GND",
+    "VCC_3V3"
+  ],
+  "net_settings": {
+    "All Nets": [
+      "GND",
+      "VCC_3V3",
+      "SDA",
+      "SCL",
+      "GPIO_0"
+    ],
+    "Power Nets": [
+      "GND",
+      "VCC_3V3"
+    ],
+    "Signal Nets": [
+      "SDA",
+      "SCL",
+      "GPIO_0"
+    ],
+    "High Speed": [
+      "SDA",
+      "SCL"
+    ]
+  },
+  "DRC_list": {
+    "clearance_rules": {
+      "default_clearance": 150,
+      "copper_to_copper": 150,
+      "copper_to_edge": 250,
+      "via_to_via": 200,
+      "via_to_trace": 150,
+      "via_to_pad": 150,
+      "trace_to_pad": 100,
+      "solder_mask_expansion": 50
+    },
+    "trace_rules": {
+      "min_trace_width": 100,
+      "max_trace_width": 2000,
+      "default_trace_width": 150
+    },
+    "via_rules": {
+      "min_via_diameter": 400,
+      "max_via_diameter": 1000,
+      "min_hole_size": 200,
+      "min_annular_ring": 100
+    },
+    "plane_rules": {
+      "thermal_relief_width": 250,
+      "thermal_relief_gap": 200,
+      "plane_clearance": 300
+    },
+    "manufacturing_rules": {
+      "min_drill_size": 200,
+      "min_slot_width": 800,
+      "min_silk_width": 150,
+      "min_silk_clearance": 100
+    }
+  },
+  "schematics": {
+    "name": "Example_PCB_Schematic",
+    "sheets": [
+      {
+        "uid": "sheet_001",
+        "name": "Main",
+        "path": "/Main",
+        "page_number": 1
+      },
+      {
+        "uid": "sheet_002",
+        "name": "Power",
+        "path": "/Power",
+        "page_number": 2
+      }
+    ],
+    "symbols": [
+      {
+        "uid": "sym_R1",
+        "reference": "R1",
+        "sheet": "/Main",
+        "position": [
+          1000,
+          2000
+        ],
+        "lib_name": "Device:R"
+      },
+      {
+        "uid": "sym_C1",
+        "reference": "C1",
+        "sheet": "/Power",
+        "position": [
+          1500,
+          2500
+        ],
+        "lib_name": "Device:C"
+      },
+      {
+        "uid": "sym_U1",
+        "reference": "U1",
+        "sheet": "/Main",
+        "position": [
+          3000,
+          2000
+        ],
+        "lib_name": "MCU:MCU_Generic"
+      }
+    ],
+    "wires": [
+      {
+        "uid": "wire_001",
+        "net_name": "VCC_3V3",
+        "sheet": "/Main",
+        "start": [
+          1200,
+          2000
+        ],
+        "end": [
+          2800,
+          2000
+        ]
+      },
+      {
+        "uid": "wire_002",
+        "net_name": "GND",
+        "sheet": "/Power",
+        "start": [
+          1700,
+          2500
+        ],
+        "end": [
+          2500,
+          2500
+        ]
+      }
+    ]
+  },
+  "schem_uid_to_board_uid": {
+    "sym_R1": "R1",
+    "sym_C1": "C1",
+    "sym_U1": "U1"
+  },
+  "schem_uid_to_component_name": {
+    "sym_R1": "R1",
+    "sym_C1": "C1",
+    "sym_U1": "U1"
+  },
+  "comps_with_schematics": [
+    "R1",
+    "C1",
+    "U1"
+  ],
+  "comps_without_schematics": [],
+  "placement_regions": [
+    {
+      "name": "MCU_REGION",
+      "layer": "TOP",
+      "shape": {
+        "type": "polygon",
+        "coordinates": [
+          [
+            40000,
+            30000
+          ],
+          [
+            60000,
+            30000
+          ],
+          [
+            60000,
+            50000
+          ],
+          [
+            40000,
+            50000
+          ],
+          [
+            40000,
+            30000
+          ]
+        ]
+      },
+      "allowed_components": [
+        "U1"
+      ],
+      "region_type": "PLACEMENT"
+    },
+    {
+      "name": "PASSIVE_REGION",
+      "layer": "TOP",
+      "shape": {
+        "type": "polygon",
+        "coordinates": [
+          [
+            20000,
+            30000
+          ],
+          [
+            35000,
+            30000
+          ],
+          [
+            35000,
+            45000
+          ],
+          [
+            20000,
+            45000
+          ],
+          [
+            20000,
+            30000
+          ]
+        ]
+      },
+      "allowed_components": [
+        "R1",
+        "C1"
+      ],
+      "region_type": "PLACEMENT"
+    }
+  ],
+  "keepouts": [
+    {
+      "uid": "keepout_001",
+      "name": "MOUNTING_HOLE_1",
+      "layer": "ALL",
+      "shape": {
+        "type": "circle",
+        "center": [
+          5000,
+          5000
+        ],
+        "radius": 2000
+      },
+      "keepout_type": "ALL"
+    },
+    {
+      "uid": "keepout_002",
+      "name": "MOUNTING_HOLE_2",
+      "layer": "ALL",
+      "shape": {
+        "type": "circle",
+        "center": [
+          95000,
+          75000
+        ],
+        "radius": 2000
+      },
+      "keepout_type": "ALL"
+    }
+  ],
+  "net_ties": [
+    {
+      "comp_name": "NT1",
+      "tie_pin": "1",
+      "net_pins": [
+        "2"
+      ],
+      "layer": "TOP"
+    }
+  ]
+}

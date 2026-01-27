@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Mu_Test_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T20:30:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        68000,
+        0
+      ],
+      [
+        68000,
+        52000
+      ],
+      [
+        0,
+        52000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIEL_NO_TYPE",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 1600.0
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      }
+    ],
+    "totalThickness": 1670.0
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC",
+      "class": "POWER"
+    },
+    {
+      "name": "ADC_IN",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "R1": {
+      "name": "R1",
+      "reference": "R1",
+      "footprint": "RES_0603",
+      "outline": {
+        "type": "rectangle",
+        "width": 1600,
+        "height": 800,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          34000,
+          26000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "R1",
+          "net_name": "VCC",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 600
+          },
+          "position": [
+            -550,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "R1",
+          "net_name": "ADC_IN",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 600
+          },
+          "position": [
+            550,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_adc": {
+      "uid": "trace_adc",
+      "net_name": "ADC_IN",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            34550,
+            26000
+          ],
+          [
+            50000,
+            26000
+          ],
+          [
+            50000,
+            40000
+          ]
+        ]
+      },
+      "width": 150
+    }
+  },
+  "vias": {
+    "via_auto_000": {
+      "uid": "via_auto_000",
+      "net_name": "ADC_IN",
+      "center": [
+        50000,
+        40000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 150
+    },
+    "default_via_rule": {
+      "diameter": 500,
+      "hole_size": 250
+    },
+    "clearance_rules": {
+      "default_clearance": 150
+    }
+  },
+  "ground_net_name": "GND"
+}

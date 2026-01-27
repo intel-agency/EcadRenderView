@@ -1,0 +1,2589 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "HDI_6Layer_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T11:00:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        80000,
+        0
+      ],
+      [
+        80000,
+        60000
+      ],
+      [
+        0,
+        60000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "L1_TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 18.0,
+          "copperWeight": "0.5oz"
+        }
+      },
+      {
+        "name": "PP1",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 100.0,
+          "dielectricConstant": 4.2
+        }
+      },
+      {
+        "name": "L2_GND",
+        "layer_type": "PLANE",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "CORE1",
+        "layer_type": "DIELECTRIC",
+        "index": 3,
+        "material": {
+          "type": "FR4",
+          "thickness": 400.0,
+          "dielectricConstant": 4.5
+        }
+      },
+      {
+        "name": "L3_SIG",
+        "layer_type": "MID",
+        "index": 4,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "PP2",
+        "layer_type": "DIELECTRIC",
+        "index": 5,
+        "material": {
+          "type": "FR4",
+          "thickness": 200.0,
+          "dielectricConstant": 4.5
+        }
+      },
+      {
+        "name": "L4_PWR",
+        "layer_type": "PLANE",
+        "index": 6,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "CORE2",
+        "layer_type": "DIELECTRIC",
+        "index": 7,
+        "material": {
+          "type": "FR4",
+          "thickness": 400.0,
+          "dielectricConstant": 4.5
+        }
+      },
+      {
+        "name": "L5_GND",
+        "layer_type": "PLANE",
+        "index": 8,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "PP3",
+        "layer_type": "DIELECTRIC",
+        "index": 9,
+        "material": {
+          "type": "FR4",
+          "thickness": 100.0,
+          "dielectricConstant": 4.2
+        }
+      },
+      {
+        "name": "L6_BOT",
+        "layer_type": "BOTTOM",
+        "index": 10,
+        "material": {
+          "type": "COPPER",
+          "thickness": 18.0,
+          "copperWeight": "0.5oz"
+        }
+      }
+    ],
+    "totalThickness": 1376.0,
+    "surfaceFinish": "ENIG"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC_1V8",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC_3V3",
+      "class": "POWER"
+    },
+    {
+      "name": "CLK_100M",
+      "class": "SIGNAL"
+    },
+    {
+      "name": "DATA0",
+      "class": "SIGNAL"
+    },
+    {
+      "name": "DATA1",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "U1": {
+      "name": "U1",
+      "reference": "U1",
+      "footprint": "BGA144",
+      "display_name": "144-Ball BGA",
+      "outline": {
+        "type": "rectangle",
+        "width": 10000,
+        "height": 10000,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          40000,
+          30000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "A1": {
+          "name": "A1",
+          "comp_name": "U1",
+          "net_name": "GND",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A2": {
+          "name": "A2",
+          "comp_name": "U1",
+          "net_name": "VCC_1V8",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A3": {
+          "name": "A3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A4": {
+          "name": "A4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A5": {
+          "name": "A5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A6": {
+          "name": "A6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A7": {
+          "name": "A7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A8": {
+          "name": "A8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A9": {
+          "name": "A9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A10": {
+          "name": "A10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A11": {
+          "name": "A11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "A12": {
+          "name": "A12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            -4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B1": {
+          "name": "B1",
+          "comp_name": "U1",
+          "net_name": "CLK_100M",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B2": {
+          "name": "B2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B3": {
+          "name": "B3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B4": {
+          "name": "B4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B5": {
+          "name": "B5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B6": {
+          "name": "B6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B7": {
+          "name": "B7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B8": {
+          "name": "B8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B9": {
+          "name": "B9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B10": {
+          "name": "B10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B11": {
+          "name": "B11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "B12": {
+          "name": "B12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            -3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C1": {
+          "name": "C1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C2": {
+          "name": "C2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C3": {
+          "name": "C3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C4": {
+          "name": "C4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C5": {
+          "name": "C5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C6": {
+          "name": "C6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C7": {
+          "name": "C7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C8": {
+          "name": "C8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C9": {
+          "name": "C9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C10": {
+          "name": "C10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C11": {
+          "name": "C11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "C12": {
+          "name": "C12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            -2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D1": {
+          "name": "D1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D2": {
+          "name": "D2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D3": {
+          "name": "D3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D4": {
+          "name": "D4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D5": {
+          "name": "D5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D6": {
+          "name": "D6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D7": {
+          "name": "D7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D8": {
+          "name": "D8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D9": {
+          "name": "D9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D10": {
+          "name": "D10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D11": {
+          "name": "D11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "D12": {
+          "name": "D12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            -2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E1": {
+          "name": "E1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E2": {
+          "name": "E2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E3": {
+          "name": "E3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E4": {
+          "name": "E4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E5": {
+          "name": "E5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E6": {
+          "name": "E6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E7": {
+          "name": "E7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E8": {
+          "name": "E8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E9": {
+          "name": "E9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E10": {
+          "name": "E10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E11": {
+          "name": "E11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "E12": {
+          "name": "E12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            -1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F1": {
+          "name": "F1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F2": {
+          "name": "F2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F3": {
+          "name": "F3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F4": {
+          "name": "F4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F5": {
+          "name": "F5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F6": {
+          "name": "F6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F7": {
+          "name": "F7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F8": {
+          "name": "F8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F9": {
+          "name": "F9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F10": {
+          "name": "F10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F11": {
+          "name": "F11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "F12": {
+          "name": "F12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            -400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G1": {
+          "name": "G1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G2": {
+          "name": "G2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G3": {
+          "name": "G3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G4": {
+          "name": "G4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G5": {
+          "name": "G5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G6": {
+          "name": "G6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G7": {
+          "name": "G7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G8": {
+          "name": "G8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G9": {
+          "name": "G9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G10": {
+          "name": "G10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G11": {
+          "name": "G11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "G12": {
+          "name": "G12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H1": {
+          "name": "H1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H2": {
+          "name": "H2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H3": {
+          "name": "H3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H4": {
+          "name": "H4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H5": {
+          "name": "H5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H6": {
+          "name": "H6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H7": {
+          "name": "H7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H8": {
+          "name": "H8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H9": {
+          "name": "H9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H10": {
+          "name": "H10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H11": {
+          "name": "H11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "H12": {
+          "name": "H12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            1200.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J1": {
+          "name": "J1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J2": {
+          "name": "J2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J3": {
+          "name": "J3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J4": {
+          "name": "J4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J5": {
+          "name": "J5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J6": {
+          "name": "J6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J7": {
+          "name": "J7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J8": {
+          "name": "J8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J9": {
+          "name": "J9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J10": {
+          "name": "J10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J11": {
+          "name": "J11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "J12": {
+          "name": "J12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            2000.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K1": {
+          "name": "K1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K2": {
+          "name": "K2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K3": {
+          "name": "K3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K4": {
+          "name": "K4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K5": {
+          "name": "K5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K6": {
+          "name": "K6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K7": {
+          "name": "K7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K8": {
+          "name": "K8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K9": {
+          "name": "K9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K10": {
+          "name": "K10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K11": {
+          "name": "K11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "K12": {
+          "name": "K12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            2800.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L1": {
+          "name": "L1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L2": {
+          "name": "L2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L3": {
+          "name": "L3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L4": {
+          "name": "L4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L5": {
+          "name": "L5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L6": {
+          "name": "L6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L7": {
+          "name": "L7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L8": {
+          "name": "L8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L9": {
+          "name": "L9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L10": {
+          "name": "L10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L11": {
+          "name": "L11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "L12": {
+          "name": "L12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            3600.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M1": {
+          "name": "M1",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -4400.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M2": {
+          "name": "M2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -3600.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M3": {
+          "name": "M3",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2800.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M4": {
+          "name": "M4",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -2000.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M5": {
+          "name": "M5",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -1200.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M6": {
+          "name": "M6",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            -400.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M7": {
+          "name": "M7",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            400.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M8": {
+          "name": "M8",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            1200.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M9": {
+          "name": "M9",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2000.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M10": {
+          "name": "M10",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            2800.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M11": {
+          "name": "M11",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            3600.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "M12": {
+          "name": "M12",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "circle",
+            "diameter": 350
+          },
+          "position": [
+            4400.0,
+            4400.0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    },
+    "C1": {
+      "name": "C1",
+      "reference": "C1",
+      "footprint": "CAP_0201",
+      "display_name": "0201 Decoupling Cap",
+      "outline": {
+        "type": "rectangle",
+        "width": 600,
+        "height": 300,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          35000,
+          22000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "C1",
+          "net_name": "VCC_1V8",
+          "shape": {
+            "type": "rectangle",
+            "width": 150,
+            "height": 200
+          },
+          "position": [
+            -200,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "C1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 150,
+            "height": 200
+          },
+          "position": [
+            200,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": false
+    }
+  },
+  "traces": {
+    "trace_clk": {
+      "uid": "trace_clk",
+      "net_name": "CLK_100M",
+      "layer_hash": "L1_TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            35600,
+            26400
+          ],
+          [
+            35600,
+            24000
+          ]
+        ]
+      },
+      "width": 100
+    },
+    "trace_clk_2": {
+      "uid": "trace_clk_2",
+      "net_name": "CLK_100M",
+      "layer_hash": "L1_TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            30000,
+            24000
+          ],
+          [
+            30000,
+            22000
+          ]
+        ]
+      },
+      "width": 100
+    }
+  },
+  "vias": {
+    "via_gnd_001": {
+      "uid": "via_gnd_001",
+      "net_name": "GND",
+      "center": [
+        35200,
+        22000
+      ],
+      "diameter": 350,
+      "hole_size": 150,
+      "span": {
+        "start_layer": "L1_TOP",
+        "end_layer": "L2_GND"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "CLK_100M",
+      "center": [
+        35600,
+        24000
+      ],
+      "diameter": 350,
+      "hole_size": 150,
+      "span": {
+        "start_layer": "L1_TOP",
+        "end_layer": "L6_BOT"
+      }
+    },
+    "via_auto_002": {
+      "uid": "via_auto_002",
+      "net_name": "CLK_100M",
+      "center": [
+        30000,
+        24000
+      ],
+      "diameter": 350,
+      "hole_size": 150,
+      "span": {
+        "start_layer": "L1_TOP",
+        "end_layer": "L6_BOT"
+      }
+    }
+  },
+  "pours": {
+    "gnd_pour_l2": {
+      "uid": "gnd_pour_l2",
+      "name": "GND_PLANE_L2",
+      "net_name": "GND",
+      "layer_hash": "L2_GND",
+      "boundary": {
+        "type": "polygon",
+        "coordinates": [
+          [
+            2000,
+            2000
+          ],
+          [
+            78000,
+            2000
+          ],
+          [
+            78000,
+            58000
+          ],
+          [
+            2000,
+            58000
+          ],
+          [
+            2000,
+            2000
+          ]
+        ]
+      },
+      "clearance": 150,
+      "cross_cutout": true
+    }
+  },
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 100
+    },
+    "default_via_rule": {
+      "diameter": 350,
+      "hole_size": 150
+    },
+    "clearance_rules": {
+      "default_clearance": 100,
+      "type_clearances": {
+        "Trace_Trace": 100,
+        "Via_Via": 150
+      }
+    },
+    "impedance_controls": [
+      {
+        "net_name": "CLK_100M",
+        "target_impedance": 50,
+        "tolerance_percent": 10
+      }
+    ]
+  },
+  "drill_data": {
+    "drill_spans": [
+      {
+        "name": "MICROVIA_TOP",
+        "start_layer": "L1_TOP",
+        "end_layer": "L2_GND",
+        "plated": true
+      },
+      {
+        "name": "THRU",
+        "start_layer": "L1_TOP",
+        "end_layer": "L6_BOT",
+        "plated": true
+      }
+    ],
+    "tools": [
+      {
+        "size": 150,
+        "type": "LASER",
+        "plated": true
+      },
+      {
+        "size": 250,
+        "type": "DRILL",
+        "plated": true
+      }
+    ]
+  },
+  "ground_net_name": "GND"
+}

@@ -1,0 +1,293 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Zeta_Test_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T17:30:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        55000,
+        0
+      ],
+      [
+        55000,
+        42000
+      ],
+      [
+        0,
+        42000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "CORE",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 1600.0
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      }
+    ],
+    "totalThickness": 1670.0
+  },
+  "nets": [
+    {
+      "name": "GND"
+    },
+    {
+      "name": "VCC",
+      "class": "POWER"
+    },
+    {
+      "name": "DATA_P",
+      "class": "SIGNAL"
+    },
+    {
+      "name": "DATA_N",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "J1": {
+      "name": "J1",
+      "reference": "J1",
+      "footprint": "CONN_DF13_4P",
+      "outline": {
+        "type": "rectangle",
+        "width": 5080,
+        "height": 2540,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          27500,
+          21000
+        ],
+        "rotation": 0,
+        "side": "BACK"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "J1",
+          "net_name": "GND",
+          "shape": {
+            "type": "circle",
+            "diameter": 1800
+          },
+          "position": [
+            -1270,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": true
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "J1",
+          "net_name": "DATA_P",
+          "shape": {
+            "type": "circle",
+            "diameter": 1800
+          },
+          "position": [
+            1270,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": true
+        },
+        "3": {
+          "name": "3",
+          "comp_name": "J1",
+          "net_name": "DATA_N",
+          "shape": {
+            "type": "circle",
+            "center": [
+              0,
+              0
+            ],
+            "radius": 150
+          },
+          "position": [
+            750,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "4": {
+          "name": "4",
+          "comp_name": "J1",
+          "net_name": "VCC",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 300
+          },
+          "position": [
+            2250,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_dp": {
+      "uid": "trace_dp",
+      "net_name": "DATA_P",
+      "layer_hash": "BOTTOM",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            25250,
+            21000
+          ],
+          [
+            25250,
+            35000
+          ],
+          [
+            40000,
+            35000
+          ]
+        ]
+      },
+      "width": 100
+    },
+    "trace_dn": {
+      "uid": "trace_dn",
+      "net_name": "DATA_N",
+      "layer_hash": "BOTTOM",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            28250,
+            21000
+          ],
+          [
+            28250,
+            33000
+          ],
+          [
+            40000,
+            33000
+          ]
+        ]
+      },
+      "width": 100
+    }
+  },
+  "vias": {
+    "via_auto_000": {
+      "uid": "via_auto_000",
+      "net_name": "DATA_P",
+      "center": [
+        25250,
+        21000
+      ],
+      "diameter": 400,
+      "hole_size": 200,
+      "span": {
+        "start_layer": "BOTTOM",
+        "end_layer": "TOP"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "DATA_P",
+      "center": [
+        40000,
+        35000
+      ],
+      "diameter": 400,
+      "hole_size": 200,
+      "span": {
+        "start_layer": "BOTTOM",
+        "end_layer": "TOP"
+      }
+    },
+    "via_auto_002": {
+      "uid": "via_auto_002",
+      "net_name": "DATA_N",
+      "center": [
+        40000,
+        33000
+      ],
+      "diameter": 400,
+      "hole_size": 200,
+      "span": {
+        "start_layer": "BOTTOM",
+        "end_layer": "TOP"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 100
+    },
+    "default_via_rule": {
+      "diameter": 400,
+      "hole_size": 200
+    },
+    "clearance_rules": {
+      "default_clearance": 100
+    },
+    "impedance_controls": [
+      {
+        "net_name": "DATA_P",
+        "target_impedance": 90,
+        "tolerance_percent": 10
+      },
+      {
+        "net_name": "DATA_N",
+        "target_impedance": 90,
+        "tolerance_percent": 10
+      }
+    ]
+  },
+  "ground_net_name": "GND"
+}

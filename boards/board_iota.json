@@ -1,0 +1,259 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Iota_Test_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T19:00:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        85000,
+        0
+      ],
+      [
+        85000,
+        62000
+      ],
+      [
+        0,
+        62000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIEL",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 1600.0
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      }
+    ],
+    "totalThickness": 1670.0
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC",
+      "class": "POWER"
+    },
+    {
+      "name": "DATA",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "U1": {
+      "name": "U1",
+      "reference": "U1",
+      "footprint": "QFN16",
+      "outline": {
+        "type": "rectangle",
+        "width": 1500,
+        "height": 800,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          42500,
+          31000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "U1",
+          "net_name": "DATA",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            -500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "U1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "4": {
+          "name": "4",
+          "comp_name": "U1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 250
+          },
+          "position": [
+            -1875,
+            -1500
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "9": {
+          "name": "9",
+          "comp_name": "U1",
+          "net_name": "VCC",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 250
+          },
+          "position": [
+            1875,
+            -500
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_data": {
+      "uid": "trace_data",
+      "net_name": "DATA",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            40625,
+            32500
+          ],
+          [
+            30000,
+            32500
+          ],
+          [
+            30000,
+            50000
+          ]
+        ]
+      },
+      "width": 150
+    },
+    "trace_bad_layer": {
+      "uid": "trace_bad_layer",
+      "net_name": "GND",
+      "layer_hash": "NONEXISTENT_LAYER_XYZ",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            10000,
+            10000
+          ],
+          [
+            20000,
+            20000
+          ]
+        ]
+      },
+      "width": 150
+    }
+  },
+  "vias": {
+    "via_auto_000": {
+      "uid": "via_auto_000",
+      "net_name": "DATA",
+      "center": [
+        40625,
+        32500
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "DATA",
+      "center": [
+        30000,
+        50000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 150
+    },
+    "default_via_rule": {
+      "diameter": 500,
+      "hole_size": 250
+    },
+    "clearance_rules": {
+      "default_clearance": 150
+    }
+  },
+  "ground_net_name": "GND"
+}

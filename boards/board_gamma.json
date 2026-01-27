@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Gamma_Test_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T16:00:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        80000,
+        0
+      ],
+      [
+        80000,
+        60000
+      ],
+      [
+        0,
+        60000
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "PREPREG",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 200.0
+        }
+      },
+      {
+        "name": "INNER1",
+        "layer_type": "MID",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "CORE",
+        "layer_type": "DIELECTRIC",
+        "index": 3,
+        "material": {
+          "type": "FR4",
+          "thickness": 1000.0
+        }
+      },
+      {
+        "name": "INNER2",
+        "layer_type": "MID",
+        "index": 4,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "PREPREG2",
+        "layer_type": "DIELECTRIC",
+        "index": 5,
+        "material": {
+          "type": "FR4",
+          "thickness": 200.0
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 6,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      }
+    ],
+    "totalThickness": 1540.0,
+    "surfaceFinish": "ENIG"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC",
+      "class": "POWER"
+    },
+    {
+      "name": "NET_A",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "R1": {
+      "name": "R1",
+      "reference": "R1",
+      "footprint": "RES_0402",
+      "outline": {
+        "type": "rectangle",
+        "width": 1000,
+        "height": 500,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          40000,
+          30000
+        ],
+        "rotation": 45,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "R1",
+          "net_name": "VCC",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 400
+          },
+          "position": [
+            -350,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "R1",
+          "net_name": "NET_A",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 400
+          },
+          "position": [
+            350,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_net_a": {
+      "uid": "trace_net_a",
+      "net_name": "NET_A",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            40350,
+            30350
+          ],
+          [
+            50000,
+            40000
+          ],
+          [
+            60000,
+            40000
+          ]
+        ]
+      },
+      "width": 125
+    }
+  },
+  "vias": {
+    "via_auto_000": {
+      "uid": "via_auto_000",
+      "net_name": "NET_A",
+      "center": [
+        40350,
+        30350
+      ],
+      "diameter": 450,
+      "hole_size": 225,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "NET_A",
+      "center": [
+        60000,
+        40000
+      ],
+      "diameter": 450,
+      "hole_size": 225,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 125
+    },
+    "default_via_rule": {
+      "diameter": 450,
+      "hole_size": 225
+    },
+    "clearance_rules": {
+      "default_clearance": 125
+    }
+  },
+  "ground_net_name": "GND"
+}

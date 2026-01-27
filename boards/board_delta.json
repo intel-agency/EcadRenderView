@@ -1,0 +1,261 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Delta_Test_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T16:30:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        90000,
+        0
+      ],
+      [
+        90000,
+        65000
+      ],
+      [
+        0,
+        65000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIEL",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 1600.0
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 3,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      }
+    ],
+    "totalThickness": 1670.0,
+    "surfaceFinish": "OSP"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VDD",
+      "class": "POWER"
+    },
+    {
+      "name": "IO1",
+      "class": "SIGNAL"
+    },
+    {
+      "name": "IO2",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "U1": {
+      "name": "U1",
+      "reference": "U1",
+      "footprint": "SOT23-5",
+      "outline": {
+        "type": "rectangle",
+        "width": 2900,
+        "height": 1600,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          45000,
+          32500
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "U1",
+          "net_name": "IO1",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 500
+          },
+          "position": [
+            -950,
+            -800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "U1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 500
+          },
+          "position": [
+            0,
+            -800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "3": {
+          "name": "3",
+          "comp_name": "U1",
+          "net_name": "IO2",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 500
+          },
+          "position": [
+            950,
+            -800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "4": {
+          "name": "4",
+          "comp_name": "U1",
+          "net_name": "VDD",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 500
+          },
+          "position": [
+            950,
+            800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "5": {
+          "name": "5",
+          "comp_name": "U1",
+          "net_name": null,
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 500
+          },
+          "position": [
+            -950,
+            800
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_io1": {
+      "uid": "trace_io1",
+      "net_name": "IO1",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            43800,
+            31325
+          ],
+          [
+            43800,
+            20000
+          ],
+          [
+            30000,
+            20000
+          ]
+        ]
+      },
+      "width": 150
+    }
+  },
+  "vias": {
+    "via_auto_000": {
+      "uid": "via_auto_000",
+      "net_name": "IO1",
+      "center": [
+        43800,
+        31325
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "IO1",
+      "center": [
+        30000,
+        20000
+      ],
+      "diameter": 500,
+      "hole_size": 250,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 150
+    },
+    "default_via_rule": {
+      "diameter": 500,
+      "hole_size": 250
+    },
+    "clearance_rules": {
+      "default_clearance": 150
+    }
+  },
+  "ground_net_name": "GND"
+}

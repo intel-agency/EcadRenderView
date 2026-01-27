@@ -1,0 +1,369 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Through_Hole_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T12:00:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        120000,
+        0
+      ],
+      [
+        120000,
+        80000
+      ],
+      [
+        0,
+        80000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 70.0,
+          "copperWeight": "2oz"
+        }
+      },
+      {
+        "name": "CORE",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 1500.0,
+          "dielectricConstant": 4.6
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 70.0,
+          "copperWeight": "2oz"
+        }
+      }
+    ],
+    "totalThickness": 1640.0,
+    "surfaceFinish": "OSP"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VIN",
+      "class": "POWER"
+    },
+    {
+      "name": "VOUT",
+      "class": "POWER"
+    },
+    {
+      "name": "FB",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "J1": {
+      "name": "J1",
+      "reference": "J1",
+      "footprint": "CONN_2P54_3PIN",
+      "display_name": "3-Pin Header",
+      "outline": {
+        "type": "rectangle",
+        "width": 5080,
+        "height": 2540,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          10000,
+          40000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "J1",
+          "net_name": "VIN",
+          "shape": {
+            "type": "circle",
+            "diameter": 1800
+          },
+          "position": [
+            -1270,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": true
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "J1",
+          "net_name": "GND",
+          "shape": {
+            "type": "circle",
+            "diameter": 1800
+          },
+          "position": [
+            1270,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": true
+        },
+        "3": {
+          "name": "3",
+          "comp_name": "J1",
+          "net_name": "VOUT",
+          "shape": {
+            "type": "circle",
+            "diameter": 1800
+          },
+          "position": [
+            2540,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": true
+        }
+      },
+      "user_preplaced": true
+    },
+    "L1": {
+      "name": "L1",
+      "reference": "L1",
+      "footprint": "IND_RADIAL_10MM",
+      "display_name": "10mm Radial Inductor",
+      "outline": {
+        "type": "rectangle",
+        "width": 1500,
+        "height": 800,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          60000,
+          40000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "L1",
+          "net_name": "VIN",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            -500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "L1",
+          "net_name": "VOUT",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_vin": {
+      "uid": "trace_vin",
+      "net_name": "VIN",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8730,
+            40000
+          ],
+          [
+            5000,
+            40000
+          ]
+        ]
+      },
+      "width": 350
+    },
+    "trace_vin_2": {
+      "uid": "trace_vin_2",
+      "net_name": "VIN",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            59500,
+            40000
+          ],
+          [
+            57000,
+            40000
+          ]
+        ]
+      },
+      "width": 350
+    },
+    "trace_vout": {
+      "uid": "trace_vout",
+      "net_name": "VOUT",
+      "layer_hash": "BOTTOM",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            60500,
+            40000
+          ],
+          [
+            63000,
+            40000
+          ]
+        ]
+      },
+      "width": 350
+    },
+    "trace_vout_2": {
+      "uid": "trace_vout_2",
+      "net_name": "VOUT",
+      "layer_hash": "BOTTOM",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            12540,
+            40000
+          ],
+          [
+            15000,
+            40000
+          ]
+        ]
+      },
+      "width": 350
+    }
+  },
+  "vias": {
+    "via_auto_000": {
+      "uid": "via_auto_000",
+      "net_name": "VIN",
+      "center": [
+        5000,
+        40000
+      ],
+      "diameter": 800,
+      "hole_size": 400,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "VIN",
+      "center": [
+        57000,
+        40000
+      ],
+      "diameter": 800,
+      "hole_size": 400,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_002": {
+      "uid": "via_auto_002",
+      "net_name": "VOUT",
+      "center": [
+        63000,
+        40000
+      ],
+      "diameter": 800,
+      "hole_size": 400,
+      "span": {
+        "start_layer": "BOTTOM",
+        "end_layer": "TOP"
+      }
+    },
+    "via_auto_003": {
+      "uid": "via_auto_003",
+      "net_name": "VOUT",
+      "center": [
+        15000,
+        40000
+      ],
+      "diameter": 800,
+      "hole_size": 400,
+      "span": {
+        "start_layer": "BOTTOM",
+        "end_layer": "TOP"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 500
+    },
+    "default_via_rule": {
+      "diameter": 800,
+      "hole_size": 400
+    },
+    "clearance_rules": {
+      "default_clearance": 300
+    }
+  },
+  "ground_net_name": "GND"
+}

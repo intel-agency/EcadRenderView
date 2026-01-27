@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Simple_2Layer_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T10:30:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        50000,
+        0
+      ],
+      [
+        50000,
+        40000
+      ],
+      [
+        0,
+        40000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0,
+          "copperWeight": "1oz"
+        }
+      },
+      {
+        "name": "DIELECTRIC_1",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 1600.0,
+          "dielectricConstant": 4.5
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0,
+          "copperWeight": "1oz"
+        }
+      }
+    ],
+    "totalThickness": 1670.0,
+    "surfaceFinish": "HASL"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC",
+      "class": "POWER"
+    },
+    {
+      "name": "NET1",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "R1": {
+      "name": "R1",
+      "reference": "R1",
+      "footprint": "RES_0805",
+      "display_name": "0805 Resistor",
+      "outline": {
+        "type": "rectangle",
+        "width": 2000,
+        "height": 1250,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          10000,
+          20000
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "R1",
+          "net_name": "VCC",
+          "shape": {
+            "type": "rectangle",
+            "width": 450,
+            "height": 900
+          },
+          "position": [
+            -700,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "R1",
+          "net_name": "NET1",
+          "shape": {
+            "type": "rectangle",
+            "width": 450,
+            "height": 900
+          },
+          "position": [
+            700,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    }
+  },
+  "traces": {
+    "trace_001": {
+      "uid": "trace_001",
+      "net_name": "NET1",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            10700,
+            20000
+          ],
+          [
+            25000,
+            20000
+          ]
+        ]
+      },
+      "width": 200
+    }
+  },
+  "vias": {
+    "via_auto_000": {
+      "uid": "via_auto_000",
+      "net_name": "NET1",
+      "center": [
+        25000,
+        20000
+      ],
+      "diameter": 600,
+      "hole_size": 300,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {},
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 200
+    },
+    "default_via_rule": {
+      "diameter": 600,
+      "hole_size": 300
+    },
+    "clearance_rules": {
+      "default_clearance": 200
+    }
+  },
+  "ground_net_name": "GND"
+}

@@ -1,0 +1,544 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "name": "Mixed_Technology_Board",
+    "source": "QuilterCodeChallengeECAD",
+    "designUnits": "MICRON",
+    "creationDate": "2026-01-09T14:00:00Z"
+  },
+  "boundary": {
+    "type": "polygon",
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        75000,
+        0
+      ],
+      [
+        75000,
+        55000
+      ],
+      [
+        0,
+        55000
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "stackup": {
+    "layers": [
+      {
+        "name": "TOP",
+        "layer_type": "TOP",
+        "index": 0,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIEL1",
+        "layer_type": "DIELECTRIC",
+        "index": 1,
+        "material": {
+          "type": "FR4",
+          "thickness": 200.0,
+          "dielectricConstant": 4.4
+        }
+      },
+      {
+        "name": "GND",
+        "layer_type": "PLANE",
+        "index": 2,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "CORE",
+        "layer_type": "DIELECTRIC",
+        "index": 3,
+        "material": {
+          "type": "FR4",
+          "thickness": 1000.0,
+          "dielectricConstant": 4.5
+        }
+      },
+      {
+        "name": "PWR",
+        "layer_type": "PLANE",
+        "index": 4,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      },
+      {
+        "name": "DIEL2",
+        "layer_type": "DIELECTRIC",
+        "index": 5,
+        "material": {
+          "type": "FR4",
+          "thickness": 200.0,
+          "dielectricConstant": 4.4
+        }
+      },
+      {
+        "name": "BOTTOM",
+        "layer_type": "BOTTOM",
+        "index": 6,
+        "material": {
+          "type": "COPPER",
+          "thickness": 35.0
+        }
+      }
+    ],
+    "totalThickness": 1540.0,
+    "surfaceFinish": "ENIG"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC_5V",
+      "class": "POWER"
+    },
+    {
+      "name": "VCC_3V3",
+      "class": "POWER"
+    },
+    {
+      "name": "UART_TX",
+      "class": "SIGNAL"
+    },
+    {
+      "name": "UART_RX",
+      "class": "SIGNAL"
+    }
+  ],
+  "components": {
+    "U1": {
+      "name": "U1",
+      "reference": "U1",
+      "footprint": "QFN32",
+      "display_name": "32-Pin QFN MCU",
+      "outline": {
+        "type": "rectangle",
+        "width": 1500,
+        "height": 800,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          37500,
+          27500
+        ],
+        "rotation": 0,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "U1",
+          "net_name": "UART_TX",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            -500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "U1",
+          "net_name": "UART_RX",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "8": {
+          "name": "8",
+          "comp_name": "U1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 250
+          },
+          "position": [
+            -2375,
+            -2000
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "17": {
+          "name": "17",
+          "comp_name": "U1",
+          "net_name": "VCC_3V3",
+          "shape": {
+            "type": "rectangle",
+            "width": 250,
+            "height": 250
+          },
+          "position": [
+            2375,
+            -500
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "EP": {
+          "name": "EP",
+          "comp_name": "U1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 3000,
+            "height": 3000
+          },
+          "position": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": true
+    },
+    "J1": {
+      "name": "J1",
+      "reference": "J1",
+      "footprint": "USB_MICRO_B",
+      "display_name": "Micro USB Connector",
+      "outline": {
+        "type": "rectangle",
+        "width": 1500,
+        "height": 800,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          10000,
+          5000
+        ],
+        "rotation": 90,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "J1",
+          "net_name": "VCC_5V",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            -500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "J1",
+          "net_name": "",
+          "shape": {
+            "type": "rectangle",
+            "width": 300,
+            "height": 400
+          },
+          "position": [
+            500,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "5": {
+          "name": "5",
+          "comp_name": "J1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 400,
+            "height": 400
+          },
+          "position": [
+            1300,
+            2000
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "S1": {
+          "name": "S1",
+          "comp_name": "J1",
+          "net_name": "GND",
+          "shape": {
+            "type": "circle",
+            "diameter": 1800
+          },
+          "position": [
+            -3000,
+            -1500
+          ],
+          "rotation": 0,
+          "is_throughhole": true
+        },
+        "S2": {
+          "name": "S2",
+          "comp_name": "J1",
+          "net_name": "GND",
+          "shape": {
+            "type": "circle",
+            "diameter": 1800
+          },
+          "position": [
+            3000,
+            -1500
+          ],
+          "rotation": 0,
+          "is_throughhole": true
+        }
+      },
+      "user_preplaced": true
+    },
+    "C1": {
+      "name": "C1",
+      "reference": "C1",
+      "footprint": "CAP_0603",
+      "display_name": "Decoupling Capacitor",
+      "outline": {
+        "type": "rectangle",
+        "width": 1600,
+        "height": 800,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "transform": {
+        "position": [
+          45000,
+          27500
+        ],
+        "rotation": 90,
+        "side": "FRONT"
+      },
+      "pins": {
+        "1": {
+          "name": "1",
+          "comp_name": "C1",
+          "net_name": "VCC_3V3",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 600
+          },
+          "position": [
+            -550,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        },
+        "2": {
+          "name": "2",
+          "comp_name": "C1",
+          "net_name": "GND",
+          "shape": {
+            "type": "rectangle",
+            "width": 350,
+            "height": 600
+          },
+          "position": [
+            550,
+            0
+          ],
+          "rotation": 0,
+          "is_throughhole": false
+        }
+      },
+      "user_preplaced": false
+    }
+  },
+  "traces": {
+    "trace_uart_tx": {
+      "uid": "trace_uart_tx",
+      "net_name": "UART_TX",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37000,
+            27500
+          ],
+          [
+            35000,
+            27500
+          ]
+        ]
+      },
+      "width": 150
+    },
+    "trace_uart_tx_2": {
+      "uid": "trace_uart_tx_2",
+      "net_name": "UART_TX",
+      "layer_hash": "TOP",
+      "path": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            25000,
+            27500
+          ],
+          [
+            25000,
+            45000
+          ]
+        ]
+      },
+      "width": 150
+    }
+  },
+  "vias": {
+    "via_ep": {
+      "uid": "via_ep",
+      "net_name": "GND",
+      "center": [
+        37500,
+        27500
+      ],
+      "diameter": 400,
+      "hole_size": 200,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "GND"
+      }
+    },
+    "via_auto_001": {
+      "uid": "via_auto_001",
+      "net_name": "UART_TX",
+      "center": [
+        35000,
+        27500
+      ],
+      "diameter": 400,
+      "hole_size": 200,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_002": {
+      "uid": "via_auto_002",
+      "net_name": "UART_TX",
+      "center": [
+        25000,
+        27500
+      ],
+      "diameter": 400,
+      "hole_size": 200,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    },
+    "via_auto_003": {
+      "uid": "via_auto_003",
+      "net_name": "UART_TX",
+      "center": [
+        25000,
+        45000
+      ],
+      "diameter": 400,
+      "hole_size": 200,
+      "span": {
+        "start_layer": "TOP",
+        "end_layer": "BOTTOM"
+      }
+    }
+  },
+  "pours": {
+    "gnd_plane": {
+      "uid": "gnd_plane",
+      "name": "GND_PLANE",
+      "net_name": "GND",
+      "layer_hash": "GND",
+      "boundary": {
+        "type": "polygon",
+        "coordinates": [
+          [
+            2000,
+            2000
+          ],
+          [
+            73000,
+            2000
+          ],
+          [
+            73000,
+            53000
+          ],
+          [
+            2000,
+            53000
+          ],
+          [
+            2000,
+            2000
+          ]
+        ]
+      },
+      "clearance": 200,
+      "cross_cutout": true
+    }
+  },
+  "rule_list": {
+    "default_trace_rule": {
+      "width": 150
+    },
+    "default_via_rule": {
+      "diameter": 400,
+      "hole_size": 200
+    },
+    "clearance_rules": {
+      "default_clearance": 150
+    }
+  },
+  "ground_net_name": "GND"
+}
