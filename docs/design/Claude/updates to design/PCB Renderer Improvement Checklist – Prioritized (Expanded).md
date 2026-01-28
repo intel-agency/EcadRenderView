@@ -62,8 +62,10 @@ Short summary: Add a keepout data model, validate its geometry, and render keepo
   * Define whether keepouts outside board bounds are errors or warnings.
 * Rendering:
 
-  * Add SVG `<defs>` patterns (hatch/crosshatch) and render keepouts with high-contrast outlines.
-  * Decide keepout draw order (recommend overlay/topmost).
+  * Use **Matplotlib** as the rendering backend.
+  * Render keepouts using `matplotlib.patches.Polygon` with `hatch='///'` for crosshatch pattern.
+  * Apply high-contrast outlines via `edgecolor` parameter.
+  * Decide keepout draw order (recommend overlay/topmost via `zorder`).
 * Documentation:
 
   * Add a “Keepouts” subsection to the rendering spec.
@@ -89,9 +91,9 @@ Short summary: Ensure every component renders an associated reference designator
 
 * Rendering:
 
-  * Add text elements for reference designators positioned at the transformed component centroid.
+  * Use **Matplotlib** `matplotlib.text.Text` for reference designators positioned at the transformed component centroid.
   * Define font size scaling relative to board extents.
-  * Apply halo/stroke to text for visibility on copper/substrate backgrounds.
+  * Apply halo/stroke using `matplotlib.patheffects.withStroke()` for visibility on copper/substrate backgrounds.
 * Transform rules:
 
   * Clamp or normalize text rotation to preserve legibility (e.g., keep text upright).
@@ -164,6 +166,25 @@ Short summary: Add explicit geometry and numeric validation, enforce layer/net i
 * Severity model:
 
   * Introduce error vs warning categories to avoid false positives.
+* Pydantic model-level validation:
+
+  * Use `@model_validator(mode='after')` in Pydantic models to enforce cross-field constraints at parse time:
+    ```python
+    class Via(BaseModel):
+        center: tuple[float, float]
+        diameter: float
+        hole_size: float
+
+        @model_validator(mode='after')
+        def validate_hole_size(self):
+            if self.hole_size >= self.diameter:
+                raise ValueError("Via hole_size must be smaller than diameter")
+            return self
+    ```
+  * Apply analogous validators for:
+    * `Trace.width > 0`
+    * `Polygon` with ≥3 points
+    * Referenced `layer_hash` exists in stackup
 
 **Status:** Not started
 
@@ -267,7 +288,7 @@ Short summary: Define visual constraints (canvas size/padding/font scaling) and 
 ## P1.4 Reviewer-Friendly Dependency Policy
 
 **Description / Motivation**
-Heavy dependencies reduce the probability a reviewer can run the project quickly. SVG alone satisfies the challenge and is the lowest-friction path.
+Heavy dependencies reduce the probability a reviewer can run the project quickly. Using a fast, modern package manager and a single rendering library improves install speed and reproducibility.
 
 **Review reference**
 
@@ -276,18 +297,22 @@ Heavy dependencies reduce the probability a reviewer can run the project quickly
 * §5.5 (optional formats fail gracefully)
 
 **Concrete changes to implement**
-Short summary: Make SVG mandatory and keep other output formats optional with graceful failure.
+Short summary: Use `uv` as the package manager and Matplotlib as the single rendering dependency providing SVG, PNG, and PDF via `savefig()`.
 
-* Packaging:
+* Package manager:
 
-  * Ensure base install supports SVG generation with minimal deps.
-* Optional outputs:
+  * Use **uv** for fast, reproducible dependency management.
+  * Include `uv.lock` in repository for deterministic installs.
+  * Document `uv sync` or `uv pip install .` as the install command.
+* Dependencies:
 
-  * If PNG/PDF are offered, gate behind extras (e.g., `pip install .[export]`).
-  * Provide clear errors when optional libs are absent.
+  * Require **Matplotlib** as the rendering backend (provides SVG, PNG, PDF natively via `savefig()`).
+  * Remove CairoSVG, svgwrite, ReportLab from dependencies.
+  * No optional extras split needed—single install covers all output formats.
 * Documentation:
 
-  * Document “Required vs Optional Dependencies” succinctly.
+  * Document "Required Dependencies" succinctly in README.
+  * Include quick-start: `uv sync && uv run pcb-render --help`
 
 **Status:** Not started
 
@@ -296,6 +321,41 @@ Short summary: Make SVG mandatory and keep other output formats optional with gr
 ---
 
 # Priority 2 — Testing, Diagnostics, and Submission Polish
+
+## P2.0 Automated Testing Stack
+
+**Description / Motivation**
+A robust testing stack catches edge cases and prevents regressions. Property-based testing and snapshot tests increase confidence in validation and rendering correctness.
+
+**Review reference**
+
+* §4.3 Explicit Testing Strategy
+* additions.md Section 2 (Automated Testing Solution)
+
+**Concrete changes to implement**
+Short summary: Establish a pytest-based testing stack with property-based and snapshot testing.
+
+* Framework:
+
+  * Use `pytest` as the test runner.
+* Property-based testing:
+
+  * Use `Hypothesis` to generate edge-case data (extreme coordinates, NaN, near-zero widths) for geometry and validation logic.
+* Snapshot testing:
+
+  * Use `syrupy` or `pytest-regressions` to record "known good" SVG outputs; fail tests if output changes unexpectedly.
+* Coverage:
+
+  * Use `pytest-cov` to enforce ≥90% coverage.
+* Test data:
+
+  * Create `tests/invalid_boards/` directory with JSON files crafted to trigger each validation error type.
+
+**Status:** Not started
+
+**Feedback / Notes:**
+
+---
 
 ## P2.1 Invalid Board Detection Mapping + Regression Tests
 
@@ -341,6 +401,19 @@ Short summary: Standardize structured errors with severity, codes, and JSON path
 * Error model:
 
   * Define `ErrorCode`, `severity`, `message`, `json_path`.
+  * Implement specific error codes aligned to the 14 invalid boards:
+    * `MissingBoundaryError` — No boundary key
+    * `MalformedCoordinatesError` — Coordinates list length invalid or <3 points
+    * `InvalidRotationError` — Rotation value not a number
+    * `DanglingTraceError` — Trace references non-existent net or component
+    * `NegativeWidthError` — Trace width ≤ 0
+    * `EmptyBoardError` — Boundary exists but no components/traces
+    * `InvalidViaGeometryError` — hole_size ≥ diameter
+    * `NonexistentLayerError` — Reference to undefined layer
+    * `NonexistentNetError` — Reference to undefined net
+    * `SelfIntersectingBoundaryError` — Boundary polygon self-intersects
+    * `ComponentOutsideBoundaryError` — Component entirely outside board
+    * `InvalidPinReferenceError` — Pin references wrong component
 * CLI output:
 
   * Print a concise human summary and (optionally) JSON output for tooling.
