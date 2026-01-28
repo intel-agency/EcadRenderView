@@ -13,6 +13,17 @@ This plan focuses on a **single CLI** with a small core library to maximize corr
 
 - `pcb-render render <input.json> -o <out.svg>`
 - `pcb-render validate <input.json>`
+- `pcb-render render <input.json> -o <out.svg> --layers TOP,BOTTOM`
+- `pcb-render render <input.json> -o <out.svg> --format svg`
+
+### CLI Usage Examples
+
+```bash
+pcb-render validate boards/board_alpha.json
+pcb-render render boards/board_alpha.json -o out/board_alpha.svg
+pcb-render render boards/board_alpha.json -o out/board_alpha.svg --layers TOP,BOTTOM
+pcb-render render boards/board_alpha.json -o out/board_alpha.svg --format svg
+```
 
 ## Architecture (CLI + Core Library)
 
@@ -40,6 +51,8 @@ This plan focuses on a **single CLI** with a small core library to maximize corr
 
 Package manager: **uv** (include `uv.lock`).
 
+Rationale: a minimal dependency surface improves reviewer setup time, while Matplotlib covers all required output formats without optional plugins.
+
 ## Geometry Schema Notes (Explicit Parsing)
 
 Do not assume strict GeoJSON. Document observed encodings and parse explicitly:
@@ -64,6 +77,18 @@ Parsing step normalizes all shapes into canonical internal types:
 - **ViewBox**: computed from board boundary bbox + padding (e.g., 5–10%).
 
 All rendering and validation use a centralized `transform.py` helper to avoid inconsistencies.
+
+## Data Model Overview
+
+Canonical internal types ensure uniform downstream processing:
+
+- `Board`: metadata, boundary, stackup, nets, components, traces, vias, pours, keepouts
+- `Component`: refdes, footprint, placement transform, pins
+- `Trace`: polyline path, width, net, layer
+- `Via`: center, diameter, hole size, net
+- `Keepout`: polygon, optional layer scope
+
+Each model enforces its own invariants with Pydantic validators and cross-field checks.
 
 ## Rendering Requirements
 
@@ -92,6 +117,27 @@ Deterministic order:
 5. Components
 6. Reference designators
 7. Keepouts (overlay)
+
+### Rendering Strategy
+
+Primary output: SVG. PNG/PDF are generated via Matplotlib `savefig()` for consistency.
+
+```text
+render_svg(board)
+    → normalize units (mm)
+    → compute viewBox with padding
+    → draw layers in deterministic order
+    → apply transforms (rotation, mirroring)
+    → emit SVG via Matplotlib backend
+```
+
+### Styling Defaults
+
+- Board outline: dark neutral stroke, no fill
+- Copper/pours: low opacity fill to preserve readability
+- Traces: high-contrast strokes with width in mm → px mapping
+- Vias: filled circles with contrasting outline
+- Refdes: halo/outline for visibility across copper
 
 ## Validation & Error Reporting
 
@@ -140,6 +186,35 @@ CLI output shows concise summary and optional JSON diagnostics.
 - Add `tests/invalid_boards/` with crafted JSONs mapping to each error code
 - Coverage target ≥ 90%
 
+### Coverage Reporting
+
+- Use `pytest-cov` to generate terminal and XML reports.
+- Enforce minimum coverage thresholds in CI.
+- Publish coverage artifacts for review (XML + HTML).
+
+Example CI coverage target: **90%** line coverage on core modules.
+
+## CI/CD & Automation
+
+### CI Workflows (Matrix)
+
+- OS matrix: Windows, macOS, Linux
+- Python matrix: 3.11 and 3.12
+
+### Automated Checks
+
+- **Tests**: `pytest` + snapshots
+- **Coverage**: `pytest-cov` with minimum threshold
+- **Lint**: `ruff` (format + lint)
+- **Type check**: `pyright` or `mypy`
+- **Security**: `pip-audit` and **CodeQL**
+- **Packaging**: `python -m build` on tag
+
+### Release Workflow (Optional)
+
+- On version tag: build wheel/sdist, attach artifacts to GitHub Release
+- Optional publish to PyPI if needed (out of scope for submission)
+
 ## Project Layout (Compact)
 
 ```text
@@ -154,6 +229,7 @@ tests/
     test_parse.py
     test_validate.py
     test_render_svg.py
+    invalid_boards/
 ```
 
 ## Documentation (Reviewer-Facing)
@@ -165,6 +241,20 @@ README outline:
 - CLI examples (render, validate)
 - Output description (SVG)
 - Known limitations and future work
+
+## Advantages of This Design
+
+1. **Reviewable**: minimal setup, fast execution, predictable outputs.
+2. **Correctness-focused**: formalized transforms and strict validation.
+3. **Deterministic**: stable draw order + snapshot testing.
+4. **Portable**: works on Windows/macOS/Linux with the same CLI.
+5. **Future-proof**: clean separation allows optional service layer later.
+
+## Performance Considerations
+
+- Use iterators for large trace/via collections.
+- Cache derived geometry when reused across render steps.
+- Normalize floats (rounding) for stable snapshot diffs.
 
 ## Future Work (Out of Submission Scope)
 
