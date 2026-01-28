@@ -1,0 +1,27 @@
+We need to explore and decide on the best design and architecture for the given requirements in the pdf document from the repo.
+
+Preference is for python on MacOS according to spec doc.
+
+Problem: I don't have access to a MacOS environment 
+  - Python is cross-platform so solutions like docker could work around this in a pretty  straightforward manner)
+- But what about the frontend?
+- Does python have any UI frameworks that run on MacOS?
+
+Main questions:
+
+1. Which platforms? 
+ - MacOS only? 
+ - Cross-platform (i.e. Linux, Mac, Windows)?
+ - What type of app (desktop, CLI, web?)
+
+2. Which libraries? (once platform and type are decided) 
+
+* I am leaning towards a CLI frontend + REST API server backend in python. 
+    - This solves the MacOs problem (its actually cross-platform on all 3)
+    - How to display result then? (i.e. SVG, PDF, PNG)
+    - API designed so that any type of frontend can usie it (e.g. Web, C# desktop) --> this CLI is just one example of a frontend client.
+
+* I'd like to allow user to choose between all three output types.
+
+
+Include an analysis of which platform/language/app type best fulfils the listed requirements
